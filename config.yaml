@@ -1,0 +1,11 @@
+linux_chrome_path: headless-chromium # chrome on linux.You must move headless-chromium to `/usr/local/bin/` first
+windows_chrome_path: C:/Program Files/Google/Chrome/Application/chrome.exe  # windows default chrome path
+image_save_path: D:/download/shot # image save path. You must configure it,it will be checked on program boots
+header_template: F:/cxxzoom/everydayNormalGo2/src/Octopus/PdfHelper/header.js # 页眉文件
+footer_template: F:/cxxzoom/everydayNormalGo2/src/Octopus/PdfHelper/footer.js # 页脚文件
+debug: false # Is debug status,if yes and on windows,it will open with GUI.Except linux.
+wait_element: "#loading_completed_dome"
+margin_top: 0.25 # 上边距 0 - 1
+margin_left: 0 # 左边距 0 - 1
+margin_right: 0 # 右边距 0 - 1
+margin_bottom: 0.1 # 下边距 0 - 1
