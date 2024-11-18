@@ -22,11 +22,14 @@ func NewPdfHelper(config structures.Config) *PdfHelper {
 }
 
 func (p PdfHelper) Task(urlStr string, res *[]byte) chromedp.Tasks {
-	return chromedp.Tasks{
+	actions := chromedp.Tasks{
 		chromedp.Navigate(urlStr),
-		// 等待元素加载完成
-		chromedp.WaitReady(p.WaitElement),
 	}
+	if p.WaitElement != "" {
+		actions = append(actions, chromedp.WaitVisible(p.WaitElement))
+	}
+
+	return actions
 }
 
 func (p PdfHelper) Print(ctx context.Context, urlStr string, id int) error {
